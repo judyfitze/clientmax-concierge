@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ClientMax Concierge | Always-On Follow-Up for Med Spas</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #2d3748; background: #faf9f7; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        .hero { background: linear-gradient(135deg, #faf9f7 0%, #f5f3ef 100%); padding: 100px 0 80px; text-align: center; }
+        .hero h1 { font-size: 3rem; font-weight: 600; color: #1a202c; margin-bottom: 24px; line-height: 1.2; }
+        .hero .subheadline { font-size: 1.25rem; color: #4a5568; max-width: 700px; margin: 0 auto 40px; line-height: 1.7; }
+        .cta-button { display: inline-block; background: #d4a574; color: #1a202c; padding: 18px 48px; font-size: 1.1rem; font-weight: 600; text-decoration: none; border-radius: 8px; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(212, 165, 116, 0.3); }
+        .cta-button:hover { background: #c49a6c; transform: translateY(-2px); box-shadow: 0 6px 20px rgba(212, 165, 116, 0.4); }
+        .microcopy { margin-top: 24px; font-size: 0.9rem; color: #718096; }
+        .problem { padding: 80px 0; background: #fff; }
+        .section-title { font-size: 2.25rem; font-weight: 600; color: #1a202c; margin-bottom: 32px; text-align: center; }
+        .problem-content { max-width: 800px; margin: 0 auto; font-size: 1.1rem; line-height: 1.9; color: #4a5568; }
+        .problem-content p { margin-bottom: 24px; }
+        .agitation { padding: 80px 0; background: #f7f5f2; }
+        .agitation-content { max-width: 800px; margin: 0 auto; font-size: 1.1rem; line-height: 1.9; color: #4a5568; }
+        .agitation-content p { margin-bottom: 24px; }
+        .highlight-box { background: #fff; border-left: 4px solid #d4a574; padding: 24px 32px; margin: 32px 0; border-radius: 0 8px 8px 0; }
+        .highlight-box p { margin: 0; font-weight: 500; color: #2d3748; }
+        .solution { padding: 80px 0; background: #fff; }
+        .solution-content { max-width: 800px; margin: 0 auto; font-size: 1.1rem; line-height: 1.9; color: #4a5568; }
+        .solution-content p { margin-bottom: 24px; }
+        .value-section { padding: 80px 0; background: #f7f5f2; }
+        .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 24px; max-width: 900px; margin: 48px auto 0; }
+        .stat-card { background: #fff; padding: 32px; border-radius: 12px; text-align: center; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+        .stat-number { font-size: 2.5rem; font-weight: 700; color: #d4a574; margin-bottom: 8px; }
+        .stat-label { font-size: 0.9rem; color: #718096; }
+        .mechanism { padding: 80px 0; background: #faf9f7; }
+        .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 32px; max-width: 1000px; margin: 48px auto 0; }
+        .step { background: #fff; padding: 32px; border-radius: 12px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+        .step-number { display: inline-block; width: 40px; height: 40px; background: #d4a574; color: #fff; font-weight: 600; font-size: 1.2rem; line-height: 40px; text-align: center; border-radius: 50%; margin-bottom: 16px; }
+        .step h3 { font-size: 1.2rem; font-weight: 600; color: #1a202c; margin-bottom: 12px; }
+        .step p { color: #718096; font-size: 0.95rem; line-height: 1.7; }
+        .features { padding: 80px 0; background: #fff; }
+        .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; max-width: 1000px; margin: 48px auto 0; }
+        .feature { display: flex; align-items: flex-start; gap: 16px; padding: 24px; background: #faf9f7; border-radius: 8px; }
+        .feature-icon { font-size: 1.5rem; flex-shrink: 0; }
+        .feature h3 { font-size: 1.1rem; font-weight: 600; color: #1a202c; margin-bottom: 8px; }
+        .feature p { color: #718096; font-size: 0.9rem; line-height: 1.6; }
+        .offer { padding: 100px 0; background: linear-gradient(135deg, #f7f5f2 0%, #faf9f7 100%); text-align: center; }
+        .offer-content { max-width: 700px; margin: 0 auto; }
+        .offer-list { text-align: left; max-width: 500px; margin: 32px auto; list-style: none; }
+        .offer-list li { padding: 12px 0; padding-left: 32px; position: relative; color: #4a5568; }
+        .offer-list li:before { content: "✓"; position: absolute; left: 0; color: #d4a574; font-weight: 600; }
+        .audience { padding: 80px 0; background: #fff; }
+        .audience-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; max-width: 900px; margin: 48px auto 0; }
+        .audience-item { background: #faf9f7; padding: 20px; border-radius: 8px; text-align: center; font-weight: 500; color: #4a5568; }
+        .faq { padding: 80px 0; background: #faf9f7; }
+        .faq-list { max-width: 800px; margin: 48px auto 0; }
+        .faq-item { background: #fff; margin-bottom: 16px; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
+        .faq-question { padding: 24px 32px; font-weight: 600; color: #1a202c; cursor: pointer; display: flex; justify-content: space-between; align-items: center; }
+        .faq-answer { padding: 0 32px 24px; color: #718096; line-height: 1.7; }
+        .final-cta { padding: 100px 0; background: #1a202c; text-align: center; }
+        .final-cta h2 { color: #fff; font-size: 2.5rem; margin-bottom: 24px; }
+        .final-cta p { color: #a0aec0; font-size: 1.2rem; max-width: 600px; margin: 0 auto 40px; line-height: 1.7; }
+        .final-cta .cta-button { background: #d4a574; color: #1a202c; }
+        .footer { padding: 40px 0; background: #171923; text-align: center; color: #718096; font-size: 0.9rem; }
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2rem; }
+            .section-title { font-size: 1.75rem; }
+            .steps { grid-template-columns: 1fr; }
+            .features-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <section class="hero">
+        <div class="container">
+            <h1>Your Med Spa Follow-Up, Working 24/7</h1>
+            <p class="subheadline">Experience how a professional, human-sounding AI phone agent responds to new inquiries while interest is fresh — even after hours, on weekends, or when your team is busy.</p>
+            <a href="#demo" class="cta-button">Take the Prospective Client Experience Demo</a>
+            <p class="microcopy">Built for med spas, aesthetic clinics, injectables, skin treatments, body contouring, laser services, and consultation-based beauty businesses.</p>
+        </div>
+    </section>
+
+    <section class="problem">
+        <div class="container">
+            <h2 class="section-title">Most Med Spa Inquiries Don't Happen on Your Schedule</h2>
+            <div class="problem-content">
+                <p>Your next prospective client submits a form during lunch. Or calls after dinner. Or asks about pricing at 10 PM on a Saturday.</p>
+                <p>But if follow-up depends on business hours, staff availability, or someone remembering to call back — warm inquiries cool down before the conversation starts.</p>
+                <p>In aesthetic services, timing isn't a nice-to-have. It's the difference between a booked consultation and a forgotten inquiry.</p>
+                <p>Someone asking about injectables, fillers, laser treatments, or body contouring is often comparing clinics in that exact moment. Wait until morning, and they've already moved on.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="agitation">
+        <div class="container">
+            <h2 class="section-title">You're Already Paying for These Inquiries</h2>
+            <div class="agitation-content">
+                <p>If you run Google Ads, Facebook Ads, or Instagram campaigns, every inquiry represents advertising dollars already spent.</p>
+                <p>The ads are working. People are raising their hands.</p>
+                <p>But then what happens?</p>
+                <p>Someone submits a form at 7 PM. They get an auto-reply: "We'll contact you during business hours." As if interest operates on a schedule.</p>
+                <p>Someone calls at 6:15 PM. They get voicemail. They don't leave a message. They call the next clinic on their list.</p>
+                <div class="highlight-box">
+                    <p>Your advertising creates the opportunity. Your follow-up converts it.</p>
+                </div>
+                <p>When follow-up is inconsistent, you're not just losing leads. You're paying to generate interest that never gets a proper response.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="solution">
+        <div class="container">
+            <h2 class="section-title">An Always-On Follow-Up System for Med Spa Inquiries</h2>
+            <div class="solution-content">
+                <p>ClientMax Concierge gives your clinic a professional, human-sounding AI phone agent that responds to new inquiries 24/7.</p>
+                <p>When someone asks about treatments, pricing, availability, or consultations — the system calls quickly. Qualifies interest. Follows up again if needed. Sends SMS and email nurture. And stays focused on the goal: moving interested prospects toward booking a consultation.</p>
+                <p>It doesn't replace your team. It supports them — when they're busy, when they're closed, when multiple inquiries come in at once, or when a prospect submits a form at 9 PM on a Sunday.</p>
+                <div class="highlight-box">
+                    <p>The fortune is in the follow-up. This system makes sure the follow-up actually happens.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="value-section">
+        <div class="container">
+            <h2 class="section-title">What Is One Missed Inquiry Really Worth?</h2>
+            <div class="problem-content" style="text-align: center; margin-bottom: 32px;">
+                <p>A med spa inquiry can be the beginning of a much larger client relationship. Someone may first ask about Botox, fillers, or laser treatments — but over time, that same client may return for maintenance, packages, and additional aesthetic care.</p>
+            </div>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">~$527</div>
+                    <div class="stat-label">Average Med Spa Visit<br><small>(American Med Spa Association)</small></div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">$2K–$5K+</div>
+                    <div class="stat-label">Potential Client Lifetime Value<br><small>Depending on treatment mix & retention</small></div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">24/7</div>
+                    <div class="stat-label">Response Coverage<br><small>After hours, weekends, holidays</small></div>
+                </div>
+            </div>
+            <div class="highlight-box" style="max-width: 800px; margin: 48px auto 0;">
+                <p>The real cost of slow follow-up is not just the missed appointment. It may be the missed relationship.</p>
+            </div>
+            <p style="text-align: center; color: #718096; font-size: 0.85rem; margin-top: 24px;">Industry benchmarks are provided for context only. Results vary by clinic, service mix, pricing, market, and follow-up process.</p>
+        </div>
+    </section>
+
+    <section class="mechanism">
+        <div class="container">
+            <h2 class="section-title">How It Works</h2>
+            <div class="steps">
+                <div class="step">
+                    <span class="step-number">1</span>
+                    <h3>Fast Phone Response</h3>
+                    <p>New inquiry comes in. Within minutes, a professional AI agent calls with a warm, human-sounding voice. Not a robotic menu. A natural conversation.</p>
+                </div>
+                <div class="step">
+                    <span class="step-number">2</span>
+                    <h3>Qualification & Booking Focus</h3>
+                    <p>The agent asks the right questions, adapts to responses, and keeps the conversation focused on the next step: booking a consultation.</p>
+                </div>
+                <div class="step">
+                    <span class="step-number">3</span>
+                    <h3>Persistent Follow-Up</h3>
+                    <p>If the prospect doesn't answer, the system calls again. SMS and email continue the conversation. No inquiry gets one shot and then forgotten.</p>
+                </div>
+                <div class="step">
+                    <span class="step-number">4</span>
+                    <h3>24/7 Coverage</h3>
+                    <p>After hours. Weekends. Holidays. When your front desk is slammed. The system responds consistently, every time.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="container">
+            <h2 class="section-title">What You Get</h2>
+            <div class="features-grid">
+                <div class="feature">
+                    <span class="feature-icon">🕐</span>
+                    <div>
+                        <h3>24/7 Inquiry Response</h3>
+                        <p>Responds to new inquiries during business hours, after hours, weekends, and holidays.</p>
+                    </div>
+                </div>
+                <div class="feature">
+                    <span class="feature-icon">📞</span>
+                    <div>
+                        <h3>Professional AI Phone Agent</h3>
+                        <p>Human-sounding voice calls quickly in a warm, professional, clinic-appropriate tone.</p>
+                    </div>
+                </div>
+                <div class="feature">
+                    <span class="feature-icon">🎯</span>
+                    <div>
+                        <h3>Booking-Focused Conversation</h3>
+                        <p>Adapts to prospect responses while staying focused on moving toward booking.</p>
+                    </div>
+                </div>
+                <div class="feature">
+                    <span class="feature-icon">🔄</span>
+                    <div>
+                        <h3>Call-Again Campaign</h3>
+                        <p>If not reached, the system calls again instead of letting the inquiry go cold.</p>
+                    </div>
+                </div>
+                <div class="feature">
+                    <span class="feature-icon">💬</span>
+                    <div>
+                        <h3>SMS and Email Follow-Up</h3>
+                        <p>Continues follow-up through SMS and email so the clinic stays present.</p>
+                    </div>
+                </div>
+                <div class="feature">
+                    <span class="feature-icon">📋</span>
+                    <div>
+                        <h3>Organized Follow-Up Plan</h3>
+                        <p>Every inquiry follows a consistent response path, reducing missed callbacks.</p>
+                    </div>
+                </div>
+                <div class="feature">
+                    <span class="feature-icon">📈</span>
+                    <div>
+                        <h3>Advertising Investment Support</h3>
+                        <p>Helps clinics get more value from paid traffic by improving post-inquiry response.</p>
+                    </div>
+                </div>
+                <div class="feature">
+                    <span class="feature-icon">💎</span>
+                    <div>
+                        <h3>Client Value Protection</h3>
+                        <p>Helps protect the potential value of each inquiry by responding while interest is fresh.</p>
+                    </div>
+                </div>
+                <div class="feature">
+                    <span class="feature-icon">🤝</span>
+                    <div>
+                        <h3>Front Desk Support</h3>
+                        <p>Supports your team when busy, closed, short-staffed, or on holiday.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="offer" id="demo">
+        <div class="container">
+            <div class="offer-content">
+                <h2 class="section-title">Try It Free for 30 Days</h2>
+                <p style="font-size: 1.1rem; color: #4a5568; margin-bottom: 32px;">Selected med spas and aesthetic clinics can test ClientMax Concierge with their real inquiry flow — free for 30 days.</p>
+                <ul class="offer-list">
+                    <li>24/7 response coverage</li>
+                    <li>Fast AI phone follow-up</li>
+                    <li>Call-again campaigns when prospects don't answer</li>
+                    <li>SMS and email nurture</li>
+                    <li>Organized follow-up tracking</li>
+                    <li>Better conversion from your existing ad spend</li>
+                    <li>Client value protection</li>
+                </ul>
+                <p style="color: #718096; margin: 32px 0;">At the end of 30 days, you decide whether to keep it. No long-term commitment upfront. No pressure. Just a real-world test.</p>
+                <a href="#" class="cta-button">Apply for the 30-Day Free Trial</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="audience">
+        <div class="container">
+            <h2 class="section-title">Built For</h2>
+            <div class="audience-grid">
+                <div class="audience-item">Botox / Neuromodulators</div>
+                <div class="audience-item">Dermal Fillers</div>
+                <div class="audience-item">Lip Filler</div>
+                <div class="audience-item">Skin Tightening</div>
+                <div class="audience-item">Laser Treatments</div>
+                <div class="audience-item">Body Contouring</div>
+                <div class="audience-item">Facials</div>
+                <div class="audience-item">Skin Rejuvenation</div>
+                <div class="audience-item">PRP</div>
+                <div class="audience-item">Cosmetic Consultations</div>
+                <div class="audience-item">Treatment Packages</div>
+                <div class="audience-item">Memberships</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="faq">
+        <div class="container">
+            <h2 class="section-title">Common Questions</h2>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <div class="faq-question">Does this replace our receptionist or front desk team?</div>
+                    <div class="faq-answer">No. It supports your team by helping new inquiries receive fast, consistent follow-up, especially when your staff is busy or the clinic is closed.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Does the AI give medical advice?</div>
+                    <div class="faq-answer">No. The system should not provide medical advice, diagnosis, or treatment recommendations. It is designed to support inquiry response, qualification, nurture, and booking flow.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Can this work with our current website?</div>
+                    <div class="faq-answer">Yes. The system can be connected to your existing inquiry or lead capture process depending on your current setup.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">What if we already have online booking?</div>
+                    <div class="faq-answer">That's a good thing. The system can help more prospective clients get to the booking step, especially if they hesitate, ask questions, or do not book immediately.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Is this only for clinics running paid ads?</div>
+                    <div class="faq-answer">No. It can support inquiries from Google, Facebook, Instagram, LinkedIn, your website, referrals, or other traffic sources. However, clinics already investing in advertising often see the value quickly.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">What happens in the demo?</div>
+                    <div class="faq-answer">You submit your information and experience the response flow yourself: a fast automated call, simple qualification, SMS follow-up, and email follow-up.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Can this help after hours?</div>
+                    <div class="faq-answer">Yes. That is one of the strongest use cases. The system can respond when your team is unavailable, including after hours, weekends, and holidays.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="final-cta">
+        <div class="container">
+            <h2>See What Your Prospective Clients Could Experience</h2>
+            <p>Take the demo, receive the call, and imagine the same fast, professional response working for your own new inquiries — even after hours, on weekends, or when your team is busy.</p>
+            <a href="#demo" class="cta-button">Take the Prospective Client Experience Demo</a>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>ClientMax Concierge — Professional follow-up for med spas and aesthetic clinics</p>
+            <p style="margin-top: 16px; font-size: 0.8rem;">Industry benchmarks are provided for context only. Results vary by clinic, service mix, pricing, market, and follow-up process. ClientMax Concierge does not guarantee bookings, revenue, or treatment outcomes.</p>
+        </div>
+    </footer>
+</body>
+</html>
