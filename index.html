@@ -265,7 +265,91 @@
                     <li>Client value protection</li>
                 </ul>
                 <p style="color: #718096; margin: 32px 0;">At the end of 30 days, you decide whether to keep it. No long-term commitment upfront. No pressure. Just a real-world test.</p>
-                <a href="#" class="cta-button">Apply for the 30-Day Free Trial</a>
+                
+                <!-- ClientMax / Agentic Agency Funnel Form -->
+                <div class="clientmax-form-wrapper" style="max-width:500px; margin:40px auto 0; background:#fff; padding:32px; border-radius:16px; box-shadow:0 10px 30px rgba(0,0,0,0.08);">
+                    <h3 style="text-align:center; font-size:24px; line-height:1.3; margin:0 0 8px; color:#1a202c;">
+                        Apply for Your 30-Day Free Trial
+                    </h3>
+                    <p style="text-align:center; font-size:15px; line-height:1.5; color:#718096; margin:0 0 24px;">
+                        Experience 30-day risk-free access to our 24/7 follow-up system
+                    </p>
+                    
+                    <form 
+                        id="clientmax-agentic-form"
+                        action="https://agenticagencyapp.com/pages/AddSubscriber"
+                        method="POST"
+                        target="agentic_submit_frame"
+                    >
+                        <input
+                            type="text"
+                            name="name"
+                            placeholder="Full Name"
+                            required
+                            style="width:100%; box-sizing:border-box; padding:14px; margin-bottom:12px; border:1px solid #e2e8f0; border-radius:8px; font-size:15px; background:#fff;"
+                        >
+                        
+                        <input
+                            type="email"
+                            name="email"
+                            placeholder="Email Address"
+                            required
+                            style="width:100%; box-sizing:border-box; padding:14px; margin-bottom:12px; border:1px solid #e2e8f0; border-radius:8px; font-size:15px; background:#fff;"
+                        >
+                        
+                        <input
+                            type="tel"
+                            name="phone"
+                            placeholder="Phone Number"
+                            required
+                            style="width:100%; box-sizing:border-box; padding:14px; margin-bottom:12px; border:1px solid #e2e8f0; border-radius:8px; font-size:15px; background:#fff;"
+                        >
+                        
+                        <!-- Required Agentic/EngageLeads backend fields -->
+                        <input type="hidden" name="page" value="MTAwMTI0fDE5N3xsYW5kaW5n">
+                        <input type="hidden" name="url" value="https://agenticagencyapp.com/webpages/clientmax-lead-funnel">
+                        <input type="hidden" name="select_country" value="1">
+                        <input type="hidden" name="consent_email" value="1">
+                        <input type="hidden" name="consent_sms" value="1">
+                        <input type="hidden" name="user_timezone" value="America/Vancouver">
+                        
+                        <label style="display:flex; align-items:flex-start; gap:8px; margin:4px 0 16px; font-size:12px; line-height:1.4; color:#4a5568;">
+                            <input type="checkbox" required style="margin-top:2px;">
+                            <span>
+                                By submitting this form, you agree to receive communications from us.
+                                We respect your privacy and will never share your information.
+                            </span>
+                        </label>
+                        
+                        <button
+                            type="submit"
+                            style="width:100%; padding:16px 20px; border:none; border-radius:8px; background:#CAA697; color:#1a202c; font-size:16px; font-weight:600; cursor:pointer; transition:all 0.3s ease;"
+                            onmouseover="this.style.background='#b89684'"
+                            onmouseout="this.style.background='#CAA697'"
+                        >
+                            Apply for the 30-Day Free Trial
+                        </button>
+                    </form>
+                    
+                    <p id="clientmax-submit-message" style="display:none; text-align:center; margin-top:16px; color:#1a202c; font-size:15px; font-weight:500;">
+                        Thank you — your request has been submitted.
+                    </p>
+                </div>
+                
+                <!-- Hidden iframe allows cross-domain form POST without CORS blocking the submit -->
+                <iframe name="agentic_submit_frame" style="display:none;"></iframe>
+                
+                <script>
+                    document.getElementById("clientmax-agentic-form").addEventListener("submit", function () {
+                        const message = document.getElementById("clientmax-submit-message");
+                        message.style.display = "block";
+                        
+                        // Redirect to thank you page after submit
+                        setTimeout(function () {
+                            window.location.href = "https://agenticagencyapp.com/webpages/clientmax-lead-funnel/thankyou";
+                        }, 1800);
+                    });
+                </script>
             </div>
         </div>
     </section>
